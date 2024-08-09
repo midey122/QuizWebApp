@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta http-equiv="refresh" content="2"> -->
+    <link rel="stylesheet" href="/css/signup.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="circle"></div>
+    <div class="modal-container">
+      <%_if (message !== "") {%>
+      <div><%=message%></div>
+      <%}%>
+      <div class="modal">
+        <div class="modal-header">
+          <h2>Login</h2>
+        </div>
+        <div class="modal-body">
+          <form id="signup-form" method="post" action="/user/login">
+            <label for="name">Username:</label>
+            <input type="text" id="name" name="username" required /><br />
+
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+            /><br />
+            <button type="submit">Login</button>
+          </form>
+          <p>Don't have an account? <a href="/user/signup"> Signup </a></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

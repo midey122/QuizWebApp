@@ -1,0 +1,122 @@
+.image img {
+  /* z-index: auto; */
+  width: 150px;
+  border-radius: 50%;
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
+.profile {
+  position: relative;
+  margin-right: 0;
+}
+.circle-1 {
+  position: absolute;
+  box-sizing: border-box;
+  width: 170px;
+  height: 170px;
+  top: 60px;
+  left: -10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: white white white transparent;
+  border-radius: 50%;
+  transition: all 1.5s ease-in-out;
+}
+.circle-2 {
+  position: absolute;
+  box-sizing: border-box;
+  width: 180px;
+  height: 180px;
+  top: 55px;
+  left: -15px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: white transparent white white;
+  border-radius: 50%;
+  transition: all 1.5s ease-in-out;
+}
+&:hover {
+  cursor: pointer;
+  .circle-1 {
+    transform: rotate(360deg);
+  }
+  .circle-2 {
+    transform: rotate(-360deg);
+  }
+}
+.name {
+  color: whitesmoke;
+  text-align: center;
+  font-size: 2em;
+  /* margin-right: 40px; */
+  margin-bottom: 10px;
+}
+.emails {
+  color: white;
+  font-size: 1.2em;
+  /* margin-right: 40px; */
+  margin-bottom: 10px;
+}
+.profile-sec {
+  display: flex;
+  justify-content: center;
+  gap: 30%;
+  align-items: center;
+  padding-inline: 10%;
+}
+.scoreboard {
+  color: white;
+}
+.scoreboard h3 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  width: 100%;
+}
+.scores {
+  width: 200%;
+  height: 50vh;
+  border-radius: 10px;
+  background: rgba(7, 80, 53, 0.72);
+  text-align: center;
+  padding: 30%;
+}
+.scores h1 {
+  font-size: 8em;
+  color: rgba(250, 250, 10, 0.953);
+  margin-bottom: 50px;
+}
+@media (max-width: 1000px) {
+  .profile-sec {
+    gap: 20%;
+  }
+}
+@media (max-width: 900px) {
+  .profile-sec {
+    gap: 20%;
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 800px) {
+  .profile-sec {
+    flex-direction: column;
+    align-items: center;
+  }
+  .scoreboard {
+    margin-left: -100px;
+    text-align: center;
+  }
+  .profile {
+    margin-left: 40px;
+  }
+}
+@media (max-width: 550px) {
+  .scoreboard {
+    margin-left: -130px;
+  }
+}
+@media (max-width: 550px) {
+  .scoreboard {
+    margin-left: -150px;
+  }
+}

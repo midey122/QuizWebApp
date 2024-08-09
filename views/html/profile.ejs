@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/profile.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="" class="logo">Quizzyweb</a>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+      <label for="menu-toggle" class="menu-icon">&#9776;</label>
+      <nav class="menu">
+        <ul>
+          <li><a href="/user/index">Home</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="/user/leader">LeaderBoard</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="profile-sec">
+      <div class="circle"></div>
+      <div class="profile">
+        <div class="image">
+          <div class="circle-1"></div>
+          <div class="circle-2"></div>
+          <img src="/public/image/user-64.webp" alt="" />
+        </div>
+        <form action="/updateUser">
+          <h2 class="name"><%=user.username%></h2>
+          <p class="emails"><%=user.email%></p>
+        </form>
+
+        <button class="button" onclick="editProfile()">Edit Profile</button>
+        <button class="button" onclick="deleteAccount()">Delete Account</button>
+      </div>
+      <div class="scoreboard">
+        <h3>Your score :</h3>
+        <div class="scores">
+          <h1><%=user.score%></h1>
+          <p>out of 100</p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <article>Made by MideyTech</article>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

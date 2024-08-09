@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta http-equiv="refresh" content="4" /> -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>quizzyweb</title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="" class="logo">Quizzyweb</a>
+      <input type="radio" id="menu-toggle" class="menu-toggle" />
+      <label for="menu-toggle" class="menu-icon">&#9776;</label>
+      <nav class="menu">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="/user/profile?user='<%=user%>'">Profile</a></li>
+          <li><a href="/user/leader">LeaderBoard</a></li>
+          <li><a><%=user.username%></a></li>
+
+          <!-- <button id="open-modal">login/signup</button> -->
+        </ul>
+      </nav>
+    </header>
+    <section>
+      <div class="modal-container">
+        <div class="modal">
+          <div class="modal-header">
+            <h2>Sign Up</h2>
+            <span class="close">&times;</span>
+          </div>
+          <div class="modal-body">
+            <form id="signup-form">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required /><br />
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required /><br />
+              <label for="password">Password:</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                required
+              /><br />
+              <button type="submit">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <form action="/question/mark" method="post">
+        <% for( var i = 0; i< questions.length; i++){%>
+        <div>
+          <div class="left-side">
+            <div class="circle"></div>
+            <p>Question <span><%=i +1%></span> from <%=questions.length%></p>
+            <article><%=questions[i].title%></article>
+            <div class="line">
+              <div class="inner"></div>
+            </div>
+          </div>
+          <div class="right-side">
+            <div class="questions">
+              <p>A</p>
+              <article type="text"><%=questions[i].options[0]%></article>
+              <input
+                type="radio"
+                class="input"
+                name="<%=questions[i].title%>"
+                value="a"
+                required
+              />
+            </div>
+            <div class="questions">
+              <p>B</p>
+              <article type="text"><%=questions[i].options[1]%></article>
+              <input
+                type="radio"
+                class="input"
+                name="<%=questions[i].title%>"
+                value="b"
+                required
+              />
+            </div>
+            <div class="questions">
+              <p>C</p>
+              <article type="text"><%=questions[i].options[2]%></article>
+              <input
+                type="radio"
+                class="input"
+                name="<%=questions[i].title%>"
+                value="c"
+                required
+              />
+            </div>
+            <div class="questions">
+              <p>D</p>
+              <article type="text"><%=questions[i].options[3]%></article>
+              <input
+                type="radio"
+                class="input"
+                name="<%=questions[i].title%>"
+                value="d"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <% } %>
+        <input type="hidden"name="user" value="<%=user%>">
+        <button type="submit" class="next" style="margin-top: 50px">
+          Submit
+        </button>
+      </form>
+    </section>
+    <footer>
+      <article>Made by MideyTech</article>
+    </footer>
+    <script src="/script.js"></script>
+   
+  </body>
+</html>
